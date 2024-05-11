@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model DataForm {
+  id        Int @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  company   String
+  createdAt DateTime @default(now())
+}
